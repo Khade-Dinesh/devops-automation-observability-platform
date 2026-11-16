@@ -44,6 +44,6 @@ jobs:
           context: ./app
           push: true
           tags: |
-            YOUR_DOCKERHUB_USERNAME/devops-monitoring-api:latest
-            YOUR_DOCKERHUB_USERNAME/devops-monitoring-api:${{ github.sha }}
+            ${{ secrets.DOCKERHUB_USERNAME }}/devops-monitoring-api:latest
+            ${{ secrets.DOCKERHUB_USERNAME }}/devops-monitoring-api:${{ github.sha }}
 
