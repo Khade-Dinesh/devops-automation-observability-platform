@@ -13,14 +13,18 @@ It collects application and system metrics, visualizes performance through Grafa
 ```mermaid
 flowchart TD
     A[AWS EC2 - Ubuntu] --> B[Docker Compose]
+
     B --> C[Flask Application]
     B --> D[Node Exporter]
-    C --> E[Prometheus]
-    D --> E
-    E --> F[Grafana]
-    E --> G[Alertmanager]
+    B --> E[Prometheus]
+    B --> F[Grafana]
+    B --> G[Alertmanager]
+
+    E -->|Scrapes Metrics| C
+    E -->|Scrapes Metrics| D
+    E -->|Queries| F
+    E -->|Firing Alerts| G
     G --> H[Gmail Notifications]
-```
 
 ## Technology Stack
 
