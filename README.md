@@ -9,9 +9,10 @@ This project demonstrates how to monitor a containerized application and its und
 It collects application and system metrics, visualizes performance through Grafana dashboards, evaluates infrastructure alert rules using Prometheus, and sends email notifications through Alertmanager.
 
 ## Architecture
+
+```mermaid
 flowchart TD
     A[AWS EC2 - Ubuntu] --> B[Docker Compose]
-
     B --> C[Flask Application]
     B --> D[Node Exporter]
     B --> E[Prometheus]
@@ -23,6 +24,8 @@ flowchart TD
     E -->|Queries| F
     E -->|Firing Alerts| G
     G --> H[Gmail Notifications]
+```
+
 
 ## Technology Stack
 
